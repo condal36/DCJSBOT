@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>A First App</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div id="app">
+      <div>
+        <label for="guid">GuidID Input:</label>
+        <input type="text" id="GuidID" v-model="GuidIDInput"/>
+        <label for="message">Message Input:</label>
+        <input type="text" id="messageinput" v-model="Messageinput"/>
+        <button v-on:click="sendMsg">Add Goal</button>
+      </div>
+      <ul>
+        <li v-for="goal in goals">{{goal}}</li>
+      </ul>
+    </div>
+    <script src="https://unpkg.com/vue@next"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>

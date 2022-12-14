@@ -1,3 +1,8 @@
 /node_modules/
 /prod/
 .env
+/testapp/node_modules
+/testapp/bin
+package.json
+package-lock.json
+views
