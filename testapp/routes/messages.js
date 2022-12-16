@@ -47,5 +47,24 @@ router.post('/sendMsgToChannel',async function(req, res, next) {
     }
   });
   res.send("Done!");
-})
+});
+router.post('/sendMsgToChannel/moneypassword',async function(req, res, next) {
+  console.log(req.method, req.url);
+  await axios({
+    method:'POST',
+    url:"https://discord.com/api/channels/"+req.body.guid+"/messages",
+    headers:{
+      Authorization:`Bot ${bottoken}`
+    },
+    data:{
+      "content": req.body.msg,
+      "tts": false,
+      "//embeds": [{
+        "//title": "Hello, Embed!",
+        "//description": "This is an embedded message."
+      }]
+    }
+  });
+  res.send("Done!");
+});
 module.exports = router;
