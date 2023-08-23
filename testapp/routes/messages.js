@@ -30,7 +30,7 @@ router.get('/', async function(req, res, next) {
   res.send("Done!");
 });
 router.post('/sendMsgToChannel',async function(req, res, next) {
-  console.log(req.method, req.url);
+  console.log(req.method, req.url,req.body.msg);
   await axios({
     method:'POST',
     url:"https://discord.com/api/channels/"+req.body.guid+"/messages",
@@ -49,7 +49,7 @@ router.post('/sendMsgToChannel',async function(req, res, next) {
   res.send("Done!");
 });
 router.post('/sendMsgToChannel/moneypassword',async function(req, res, next) {
-  console.log(req.method, req.url);
+  console.log(req.method, req.url,req.body.msg);
   await axios({
     method:'POST',
     url:"https://discord.com/api/channels/"+req.body.guid+"/messages",
